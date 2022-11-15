@@ -1,0 +1,12 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.nav {
+  height: 20px;
+  background-color: purple;
+  color: white;
+  font-family: fantasy;
+  padding: 1rem;
+}
