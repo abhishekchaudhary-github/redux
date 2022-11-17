@@ -27,12 +27,12 @@ function reducer(state = initialState, action) {
     return { ...state, cart: [] };
   }
 
-  // if (action.type === remove) {
-  //   return {
-  //     ...state,
-  //     cart:{cart.filter(()=> )}
-  //   };
-  // }
+  if (action.type === remove) {
+    return {
+      ...state,
+      cart: state.cart.filter((el) => el.id !== action.payload.id),
+    };
+  }
   return state;
 }
 
