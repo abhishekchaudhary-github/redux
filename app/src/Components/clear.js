@@ -8,13 +8,15 @@ function clear({ cart, dispatch }) {
     <>
       <br />
       {cart.map((el) => {
-        <Card
-          id={el.id}
-          img={el.img}
-          title={el.title}
-          price={el.price}
-          amount={el.amount}
-        />;
+        return (
+          <Card
+            id={el.id}
+            img={el.img}
+            title={el.title}
+            price={el.price}
+            amount={el.amount}
+          />
+        );
       })}
       <hr />
       <h3>TOTAL = $0.00</h3>
