@@ -1,6 +1,8 @@
 import React from "react";
+import { connect } from "react-redux";
+import { increase } from "./action";
 
-function uparrow() {
+function uparrow({ count, dispatch }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -10,6 +12,9 @@ function uparrow() {
       stroke="currentColor"
       class="w-6 h-6"
       style={{ height: "1rem", width: "1rem" }}
+      onClick={() => {
+        dispatch({ type: increase });
+      }}
     >
       <path
         stroke-linecap="round"
@@ -20,4 +25,7 @@ function uparrow() {
   );
 }
 
-export default uparrow;
+function mapProps(store) {
+  return { count: store.count };
+}
+export default connect(mapProps)(uparrow);
